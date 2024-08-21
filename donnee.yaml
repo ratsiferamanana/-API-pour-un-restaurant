@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: API pour un Restaurant
+  description: API pour gérer les clients du restaurant
+  version: 1.0.0
+  name: STD23082
+
+servers:
+  - url: http://localhost:8080
+    description: Serveur local pour le développement
+
+paths:
+  /customers:
+    get:
+      summary: Obtenir la liste des clients
+      description: Cette requête retourne une liste de clients du restaurant.
+      responses:
+        '200':
+          description: Une liste de clients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    yearsOld:
+                      type: integer
+                      
+             
